@@ -192,43 +192,69 @@ export default function HomePage() {
               </div>
 
               <div className="mt-4 overflow-hidden rounded-2xl glass-soft shadow-sm">
-                <table className="w-full">
-                  <thead className="bg-transparent text-left text-xs font-semibold text-slate-600">
+                <table className="w-full relative">
+                  <thead className="bg-transparent text-left text-xs font-semibold text-slate-600 border-b border-slate-200">
                     <tr>
-                      <th className="px-4 py-3">Nama</th>
-                      <th className="px-4 py-3">NRP/NIM</th>
+                      <th className="px-6 py-4">Profil Anggota</th>
+                      <th className="px-4 py-4">NRP/NIM</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-200">
-                    <tr className="even:bg-slate-50">
-                      <td className="px-4 py-3">
-                        <div className="font-medium text-slate-900">Daffa Syafitra</div>
+                    <tr className="even:bg-slate-50/50 hover:bg-slate-50/80 transition-colors">
+                      <td className="px-6 py-5">
+                        <div className="flex items-center gap-5">
+                          <img 
+                            src="/images/daffa.png" 
+                            alt="Foto Daffa" 
+                            className="h-20 w-20 flex-shrink-0 rounded-full object-cover shadow-md ring-4 ring-white bg-slate-100"
+                          />
+                          <div className="font-semibold text-lg text-slate-900">Daffa Syafitra</div>
+                        </div>
                       </td>
-                      <td className="px-4 py-3 text-sm text-slate-600">2406495546</td>
+                      <td className="px-4 py-5 text-base text-slate-600 align-middle font-mono">2406495546</td>
                     </tr>
-                    <tr className="even:bg-slate-50">
-                      <td className="px-4 py-3">
-                        <div className="font-medium text-slate-900">Muhammad Azzam Fathurrahman</div>
+                    <tr className="even:bg-slate-50/50 hover:bg-slate-50/80 transition-colors">
+                      <td className="px-6 py-5">
+                        <div className="flex items-center gap-5">
+                          <img 
+                            src="/images/azzam.png" 
+                            alt="Foto Azzam" 
+                            className="h-20 w-20 flex-shrink-0 rounded-full object-cover shadow-md ring-4 ring-white bg-slate-100"
+                          />
+                          <div className="font-semibold text-lg text-slate-900">Muhammad Azzam Fathurrahman</div>
+                        </div>
                       </td>
-                      <td className="px-4 py-3 text-sm text-slate-600">2406412152</td>
+                      <td className="px-4 py-5 text-base text-slate-600 align-middle font-mono">2406412152</td>
                     </tr>
-                    <tr className="even:bg-slate-50">
-                      <td className="px-4 py-3">
-                        <div className="font-medium text-slate-900">Harish Azka Firdaus</div>
+                    <tr className="even:bg-slate-50/50 hover:bg-slate-50/80 transition-colors">
+                      <td className="px-6 py-5">
+                        <div className="flex items-center gap-5">
+                          <img 
+                            src="/images/harish.png" 
+                            alt="Foto Harish" 
+                            className="h-20 w-20 flex-shrink-0 rounded-full object-cover shadow-md ring-4 ring-white bg-slate-100"
+                          />
+                          <div className="font-semibold text-lg text-slate-900">Harish Azka Firdaus</div>
+                        </div>
                       </td>
-                      <td className="px-4 py-3 text-sm text-slate-600">2406435805</td>
+                      <td className="px-4 py-5 text-base text-slate-600 align-middle font-mono">2406435805</td>
                     </tr>
-                    <tr className="even:bg-slate-50">
-                      <td className="px-4 py-3">
-                        <div className="font-medium text-slate-900">Ghiyas Fazle Mawla Rahmat</div>
+                    <tr className="even:bg-slate-50/50 hover:bg-slate-50/80 transition-colors">
+                      <td className="px-6 py-5">
+                        <div className="flex items-center gap-5">
+                          <img 
+                            src="/images/ghiyas.png" 
+                            alt="Foto Ghiyas" 
+                            className="h-20 w-20 flex-shrink-0 rounded-full object-cover shadow-md ring-4 ring-white bg-slate-100"
+                          />
+                          <div className="font-semibold text-lg text-slate-900">Ghiyas Fazle Mawla Rahmat</div>
+                        </div>
                       </td>
-                      <td className="px-4 py-3 text-sm text-slate-600">2406354303</td>
+                      <td className="px-4 py-5 text-base text-slate-600 align-middle font-mono">2406354303</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-
-              {/* Catatan dihapus sesuai permintaan */}
             </section>
 
             {/* Theme card (hanya tampil kalau sudah login) */}
@@ -331,4 +357,3 @@ export default function HomePage() {
     </div>
   );
 }
-
