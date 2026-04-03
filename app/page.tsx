@@ -14,7 +14,7 @@ type Me = {
   can_edit: boolean;
 } | null;
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 const FONT_FAMILIES = [
   "system-ui",
@@ -103,6 +103,7 @@ export default function HomePage() {
 
   const canEdit = Boolean(me?.can_edit);
   const showEditorPanel = Boolean(me?.can_edit);
+  const backendConfigured = Boolean(BACKEND_URL);
 
   return (
     <div
@@ -126,6 +127,11 @@ export default function HomePage() {
             </div>
 
             <div className="ml-auto flex flex-nowrap items-center gap-3">
+              {!backendConfigured ? (
+                <div className="text-xs text-slate-500">
+                  Set <span className="font-semibold">NEXT_PUBLIC_API_URL</span> dulu.
+                </div>
+              ) : null}
               {meLoading ? (
                 <div className="text-sm text-slate-600">
                   Memuat akun...
@@ -141,7 +147,12 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <a href={`${BACKEND_URL}/auth/logout`}>
+                  <a
+                    href={backendConfigured ? `${BACKEND_URL}/auth/logout` : "#"}
+                    aria-disabled={!backendConfigured}
+                    tabIndex={backendConfigured ? 0 : -1}
+                    className={backendConfigured ? "" : "pointer-events-none"}
+                  >
                     <button
                       type="button"
                       className="h-10 whitespace-nowrap rounded-xl bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition duration-150 hover:bg-slate-800 active:bg-slate-900"
@@ -151,7 +162,12 @@ export default function HomePage() {
                   </a>
                 </>
               ) : (
-                <a href={`${BACKEND_URL}/auth/google`}>
+                <a
+                  href={backendConfigured ? `${BACKEND_URL}/auth/google` : "#"}
+                  aria-disabled={!backendConfigured}
+                  tabIndex={backendConfigured ? 0 : -1}
+                  className={backendConfigured ? "" : "pointer-events-none"}
+                >
                   <button
                     type="button"
                     className="h-10 rounded-xl bg-[var(--primary)] px-4 py-2 text-sm font-semibold text-white transition duration-150 hover:brightness-95 active:brightness-90"
